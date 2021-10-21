@@ -1,14 +1,17 @@
  import React from 'react';
- // import  './FormData.css';
+ import  './FormData.css';
 
 
- const FormData = ({fields,setValues, handleSubmit}) => {
+ const FormData = ({fields,setValues, errors,handleSubmit}) => {
   return (
+    <>
+    <h1>Aromatic Bar</h1>
    <div className="container">
-    <form name="Aromatic Bar" onSubmit={(e)=> handleSubmit(e)}> 
-      <div className="form-group">
+   <form name="Aromatic Bar" class="aromatic-form" onSubmit={(e)=> handleSubmit(e)}> 
+   <div className="form-group-left">
       <label htmlFor="customer-name">Customer Name</label>
       <input 
+      className="input"
        type="text"
        value={fields.customerName}
        onChange={(e) => setValues({...fields, customerName:e.target.value}) }
@@ -16,10 +19,9 @@
        id="customer-name"
        required 
       />
-      </div>
-      <div className="form-group">
       <label htmlFor="email">Email</label>
       <input 
+      className="input"
        type="email"
        value={fields.email}
        onChange={(e)=> setValues({...fields, email:e.target.value})}
@@ -27,10 +29,9 @@
        id="email"
        required 
       />
-      </div>
-      <div className="form-group">
       <label htmlFor="phone">Phone Number</label>
       <input 
+      className="input"
        type="tel"
        value={fields.phone}
        onChange={(e)=> setValues({...fields, phone : e.target.value})}
@@ -39,12 +40,13 @@
        required 
       />
       </div>
-      <div className="form-group">
+      <div className="form-group-right">
         <div className="questions-container">
         <p><strong>Question 1: </strong>Please rate the quality of the service you received from your host?
         </p>
-        <label htmlFor="Excellent" >
+        <label htmlFor="Excellent" className="label"  >
         <input 
+        className="radio-btn"
          type="radio"
          value="Excellent"
          name="service"
@@ -53,8 +55,9 @@
         />
         Excellent
         </label>
-        <label htmlFor="Good" >
-        <input 
+        <label htmlFor="Good" className="label" >
+        <input
+        className="radio-btn" 
          type="radio"
          value="Good"
          name="service"
@@ -63,8 +66,9 @@
         />
         Good
         </label>
-        <label htmlFor="Fair" >
+        <label htmlFor="Fair" className="label"  >
         <input 
+        className="radio-btn"
          type="radio"
          value="Fair"
          name="service"
@@ -73,8 +77,9 @@
         />
         Fair
         </label>
-        <label htmlFor="Bad" >
+        <label htmlFor="Bad" className="label" >
         <input 
+        className="radio-btn"
          type="radio"
          value="Bad"
          name="service"
@@ -87,8 +92,9 @@
                <div className="questions-container">
         <p><strong>Question 2: </strong>Please rate the quality of your beverage?
         </p>
-        <label htmlFor="Excellent" >
+        <label htmlFor="Excellent" className="label"  >
         <input 
+        className="radio-btn"
          type="radio"
          value="Excellent"
          name="beverage"
@@ -97,8 +103,9 @@
         />
         Excellent
         </label>
-        <label htmlFor="Good" >
+        <label htmlFor="Good" className="label" >
         <input 
+        className="radio-btn"
          type="radio"
          value="Good"
          name="beverage"
@@ -107,8 +114,9 @@
         />
         Good
         </label>
-        <label htmlFor="Fair" >
+        <label htmlFor="Fair" className="label"  >
         <input 
+        className="radio-btn"
          type="radio"
          value="Fair"
          name="beverage"
@@ -117,8 +125,9 @@
         />
         Fair
         </label>
-        <label htmlFor="Bad" >
+        <label htmlFor="Bad" className="label"  >
         <input 
+        className="radio-btn"
          type="radio"
          value="Bad"
          name="beverage"
@@ -131,8 +140,9 @@
         <div className="questions-container">
         <p><strong>Question 3: </strong>Was our restaurant clean?
         </p>
-        <label htmlFor="Excellent" >
+        <label htmlFor="Excellent" className="label"  >
         <input 
+        className="radio-btn"
          type="radio"
          value="Excellent"
          name="clean"
@@ -141,8 +151,9 @@
         />
         Excellent
         </label>
-        <label htmlFor="Good" >
+        <label htmlFor="Good"  className="label" >
         <input 
+        className="radio-btn"
          type="radio"
          value="Good"
          name="clean"
@@ -151,8 +162,9 @@
         />
         Good
         </label>
-        <label htmlFor="Fair" >
+        <label htmlFor="Fair" className="label" >
         <input 
+        className="radio-btn"
          type="radio"
          value="Fair"
          name="clean"
@@ -161,8 +173,9 @@
         />
         Fair
         </label>
-        <label htmlFor="Bad" >
+        <label htmlFor="Bad" className="label"  >
         <input 
+        className="radio-btn"
          type="radio"
          value="Bad"
          name="clean"
@@ -175,8 +188,9 @@
         <div className="questions-container">
         <p><strong>Question 4: </strong>Please rate your overall dining experience?
         </p>
-        <label htmlFor="Excellent" >
+        <label htmlFor="Excellent" className="label"  >
         <input 
+        className="radio-btn"
          type="radio"
          value="Excellent"
          name="experience"
@@ -185,8 +199,9 @@
         />
         Excellent
         </label>
-        <label htmlFor="Good" >
-        <input 
+        <label htmlFor="Good" className="label"  >
+        <input
+        className="radio-btn" 
          type="radio"
          value="Good"
          name="experience"
@@ -195,8 +210,9 @@
         />
         Good
         </label>
-        <label htmlFor="Fair" >
+        <label htmlFor="Fair" className="label" >
         <input 
+        className="radio-btn"
          type="radio"
          value="Fair"
          name="experience"
@@ -205,8 +221,9 @@
         />
         Fair
         </label>
-        <label htmlFor="Bad" >
+        <label htmlFor="Bad" className="label"  >
         <input 
+        className="radio-btn"
          type="radio"
          value="Bad"
          name="experience"
@@ -216,12 +233,12 @@
         Bad
         </label>
         </div>
-
       </div>
-    <button type="submit">Submit</button>
-    </form>
+      <button type="submit" class="btn-submit">Submit</button>
+      </form>
    </div>
-  )
+</>
+   )
  }
 
  export default FormData

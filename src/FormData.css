@@ -1,4 +1,10 @@
-/* .container{
+.container{
+ display:flex ;
+ justify-content:space-evenly;
+ align-items: center;
+ /* position: absolute;
+ bottom: 75px; */
+ /* margin-top: 100px;
  top: 123px;
 left: 23px;
 width: 1333px;
@@ -6,11 +12,43 @@ height: 668px;
 background: var(--white) 0% 0% no-repeat padding-box;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border: 1px solid #EEDFFE;
+opacity: 1; */
+}
+
+/* .aromatic-form{
+display: flex;
+flex-direction: column;
+} */
+
+h1{
+ margin-top: 50px;
+background: #F5F5F5 0% 0% no-repeat padding-box;
 opacity: 1;
 }
 
-.form-group{
+.btn-submit{
+ position: absolute;
+ bottom: 0;
+ width: 100px;
+ margin-top: 70px;
+ margin-left:470px;
+ background: var(--green500) 0% 0% no-repeat padding-box;
+background: #48A44C 0% 0% no-repeat padding-box;
+border-radius: 3px;
+opacity: 1;
+color:white
+}
+
+.label{
+ margin-right: 10px;
+}
+
+.radio-btn{
+ margin-right: 5px;
+}
+.input{
  top: 174px;
+ margin-bottom: 50px;
 left: 41px;
 width: 609px;
 height: 35px;
@@ -22,4 +60,24 @@ box-shadow: 0px 1px 4px #AA94DE;
 border: 0.75px solid #AA94DE;
 border-radius: 5px;
 opacity: 1;
-} */
+}
+
+.form-group-left{
+ position: absolute;
+ left:-80px;
+ display: flex;
+ flex-direction: column;
+ padding: 7.5rem;
+}
+
+.form-group-right{
+ position: absolute;
+ right: -80px;
+ display: flex;
+ flex-direction: column;
+ padding: 7.5rem;
+}
+
+.questions-container{
+margin-bottom: 8px;
+}

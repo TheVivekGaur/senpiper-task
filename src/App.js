@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import FormData from './FormData';
+import { Tabs, Tab, AppBar} from "@material-ui/core"
 import SubmissionTable  from './SubmissionTable';
 
 function App() {
@@ -11,19 +12,29 @@ function App() {
     beverage:' ',
     clean: ' ',
     experience:' '
-
   });
-  const [counter, setCounter] = useState(1);
-  const [ errors, setErrors] =useState({});
 
-  const validate = values => {
+  const [counter, setCounter] = useState(1);
+  const [ errors, setErrors] =useState({
+    customerName: ' ',
+    email: ' ',
+    phone: ' '
+  });
+
+  const [selectedTab , setSelectedtab] = useState(0);
+
+const handleChange = (event , newValue) => {
+  setSelectedtab(newValue)
+}
+
+   const validate = values => {
     const{ customerName, email, phone} = values
     const errors = {};
 
-    if(!customerName) errors.customerName= "customerName field cannot be blank";
+    if(!customerName) errors.customerName= 'customerName field cannot be blank';
     if(customerName.trim().length < 5) errors.customerName= 'customerName cannot be too short'
-    if(!email) errors.email= alert("email field cannot be blank");
-    if(!phone) errors.phone= "phoneNumber field  cannot be blank";
+    if(!email) errors.email= 'email field cannot be blank';
+    if(!phone) errors.phone= 'phoneNumber field  cannot be blank';
   }
 
   const handleSubmit = (e) => {
@@ -38,7 +49,13 @@ function App() {
     setCounter(counter + 1);
   }
   return (
-    <div>
+    <>
+    <AppBar>
+    <Tabs value={selectedTab} onChange={handleChange}>
+    <Tab label="Form" />
+    <Tab label="Table"  />
+    </Tabs>
+     {/* </AppBar><div className="app">
     <h1> Aromatic Bar</h1>
     <FormData
     setValues= {setValues}
@@ -46,7 +63,17 @@ function App() {
     fields={values}
     />
     <SubmissionTable />
-    </div>
+  </div> */}
+  </AppBar>
+  { selectedTab === 0 && <FormData
+     setValues={setValues}
+     handleSubmit={handleSubmit}
+     fields={values}
+     errors={errors}
+   />
+  }
+   { selectedTab === 1 && <SubmissionTable /> }
+  </>
   );
 }
 
