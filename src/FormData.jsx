@@ -9,14 +9,14 @@
    <div className="container">
    <form name="Aromatic Bar" class="aromatic-form" onSubmit={(e)=> handleSubmit(e)}> 
    <div className="form-group-left">
-      <label htmlFor="customer-name">Customer Name</label>
+      <label htmlFor="customerName">Customer Name</label>
       <input 
       className="input"
        type="text"
        value={fields.customerName}
        onChange={(e) => setValues({...fields, customerName:e.target.value}) }
        placeholder="Enter your name here"
-       id="customer-name"
+       id="customerName"
        required 
       />
       <label htmlFor="email">Email</label>

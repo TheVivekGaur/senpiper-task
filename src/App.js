@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import FormData from './FormData';
 import { Tabs, Tab, AppBar} from "@material-ui/core"
 import SubmissionTable  from './SubmissionTable';
+import Swal from 'sweetalert2';
 
 function App() {
   const [values, setValues] = useState({
@@ -39,6 +40,7 @@ const handleChange = (event , newValue) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    Swal.fire("Thank you for completing the information")
     const errors = validate(values);
     setErrors(errors);
     const originalData = JSON.parse(localStorage.getItem('submissions')) || {};
@@ -55,15 +57,6 @@ const handleChange = (event , newValue) => {
     <Tab label="Form" />
     <Tab label="Table"  />
     </Tabs>
-     {/* </AppBar><div className="app">
-    <h1> Aromatic Bar</h1>
-    <FormData
-    setValues= {setValues}
-    handleSubmit={handleSubmit}
-    fields={values}
-    />
-    <SubmissionTable />
-  </div> */}
   </AppBar>
   { selectedTab === 0 && <FormData
      setValues={setValues}
