@@ -17,6 +17,7 @@
        onChange={(e) => setValues({...fields, customerName:e.target.value}) }
        placeholder="Enter your name here"
        id="customerName"
+       minLength="4"
        required 
       />
       <label htmlFor="email">Email</label>
@@ -37,6 +38,8 @@
        onChange={(e)=> setValues({...fields, phone : e.target.value})}
        placeholder="Enter your Phone number here"
        id="phone"
+       pattern="[1-9]{1}[0-9]{9}"
+       maxLength="10"
        required 
       />
       </div>

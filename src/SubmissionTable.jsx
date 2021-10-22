@@ -12,7 +12,7 @@ const submissionsArray = Object.values(submissionData);
  return (
   <div className="table">
 <Table> 
-  <thead>
+  <thead className = "table-heading">
     <tr className="table-rows">
     <th>Form Name</th>
     <th>Email Field</th>

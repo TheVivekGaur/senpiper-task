@@ -6,8 +6,8 @@ import Swal from 'sweetalert2';
 
 function App() {
   const [values, setValues] = useState({
-    customerName: ' ',
-    email: ' ',
+    customerName:' ',
+    email:' ',
     phone: '',
     service:' ',
     beverage:' ',
@@ -17,9 +17,9 @@ function App() {
 
   const [counter, setCounter] = useState(1);
   const [ errors, setErrors] =useState({
-    customerName: ' ',
-    email: ' ',
-    phone: ' '
+    customerName:' ',
+    email:' ',
+    phone:' '
   });
 
   const [selectedTab , setSelectedtab] = useState(0);
@@ -33,7 +33,7 @@ const handleChange = (event , newValue) => {
     const errors = {};
 
     if(!customerName) errors.customerName= 'customerName field cannot be blank';
-    if(customerName.trim().length < 5) errors.customerName= 'customerName cannot be too short'
+    // if(customerName.trim().length < 5) errors.customerName= 'customerName cannot be too short';
     if(!email) errors.email= 'email field cannot be blank';
     if(!phone) errors.phone= 'phoneNumber field  cannot be blank';
   }

@@ -1,3 +1,9 @@
 .table{
- margin-top: 50px;
+ margin-top: 80px;
 }
+
+.table-heading{
+background: #C4AFEE 0% 0% no-repeat padding-box;
+opacity: 0.27;
+}
+
